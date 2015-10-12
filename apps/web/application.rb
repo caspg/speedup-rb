@@ -176,8 +176,8 @@ module Web
       #
       #  * http://content-security-policy.com/
       #  * https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Using_Content_Security_Policy
-      #
-      security.content_security_policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; font-src 'self';"
+      # =>
+      security.content_security_policy "default-src 'none'; script-src 'self' yui.yahooapis.com; connect-src 'self'; img-src 'self'; style-src 'self' yui.yahooapis.com; font-src 'self';"
 
       ##
       # FRAMEWORKS
