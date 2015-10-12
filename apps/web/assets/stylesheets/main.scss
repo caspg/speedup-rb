@@ -1,0 +1,36 @@
+$grey: #777;
+$medium-grey: lighten($grey, 30);
+$light-grey: lighten($grey, 50);
+
+$heading-font-size: 1.6em;
+
+body {
+    font-size: 18px;
+    background: $light-grey;
+}
+
+.home-menu {
+    background: white;
+
+    .pure-menu-heading {
+        font-weight: 400;
+        font-size: $heading-font-size;
+        text-transform: none;
+
+        &:hover {
+            background: none;
+        }
+    }
+
+    ul {
+        padding-top: $heading-font-size - 1em;
+        float: right;
+
+        a:hover {
+            background: none;
+            text-decoration: underline;
+        }
+            }
+}
+
+
