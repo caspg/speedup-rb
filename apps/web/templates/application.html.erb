@@ -6,14 +6,7 @@
     <link rel="stylesheet" href="/stylesheets/main.css">
   </head>
   <body>
-    <header>
-      <div class="home-menu pure-menu pure-menu-horizontal">
-        <a href="#" class="pure-menu-heading pure-menu-link">Speedup Rb</a>
-        <ul class="pure-menu-list">
-          <li class="pure-menu-list"><a href="#" class="pure-menu-link">About</a></li>
-        </ul>
-      </div>
-    </header>
+    <%= render partial: 'navbar' %>
 
     <%= yield %>
   </body>
