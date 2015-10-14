@@ -13,10 +13,10 @@ Lotus::Model.configure do
   #
   #  * SQL adapter
   #    adapter type: :sql, uri: 'sqlite://db/speedup-rb_development.sqlite3'
-  #    adapter type: :sql, uri: 'postgres://localhost/speedup-rb_development'
+     adapter type: :sql, uri: ENV['SPEEDUP_RB_DATABASE_URL']
   #    adapter type: :sql, uri: 'mysql://localhost/speedup-rb_development'
   #
-  adapter type: :file_system, uri: ENV['SPEEDUP_RB_DATABASE_URL']
+  # adapter type: :file_system, uri: ENV['SPEEDUP_RB_DATABASE_URL']
 
   ##
   # Database mapping
