@@ -1,7 +1,9 @@
-# collection :users do
-#   entity     User
-#   repository UserRepository
-#
-#   attribute :id,   Integer
-#   attribute :name, String
-# end
+collection :reports do
+  entity     Report
+  repository ReportRepository
+
+  attribute :id,         Integer
+  attribute :owner,      String
+  attribute :repo,       String
+  attribute :report_url, String
+end
