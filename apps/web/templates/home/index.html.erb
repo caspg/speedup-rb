@@ -1,0 +1,19 @@
+<%=
+  form_for :report, routes.reports_path, class: 'pure-form pure-form-aligned' do
+    fieldset do
+      div class: 'pure-control-group' do
+        label 'GitHub repo name', for: :owner
+        text_field :owner, placeholder: 'caspg/speedup-rb', class: 'dupa'
+      end
+
+      div class: 'pure-control-group' do
+        label :path
+        text_field :path, placeholder: 'apps/web/controller (optional)', class: 'dupa'
+      end
+
+      div class: 'pure-controls' do
+        submit 'Create', class: 'pure-button pure-button-primary'
+      end
+    end
+  end
+%>
