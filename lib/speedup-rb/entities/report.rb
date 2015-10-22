@@ -1,4 +1,4 @@
 class Report
   include Lotus::Entity
-  attributes :owner, :repo, :report_url
+  attributes :owner, :repo
 end

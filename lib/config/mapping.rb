@@ -5,5 +5,4 @@ collection :reports do
   attribute :id,         Integer
   attribute :owner,      String
   attribute :repo,       String
-  attribute :report_url, String
 end
