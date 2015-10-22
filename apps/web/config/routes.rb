@@ -1,3 +1,4 @@
 get '/', to: 'home#index'
 
-post '/reports', to: 'reports#create', as: :reports
+post '/', to: 'reports#create', as: :reports
+get '/reports/:id', to: 'reports#show', as: :report
