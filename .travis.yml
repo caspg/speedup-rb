@@ -5,8 +5,10 @@ rvm:
   - 2.2.2
 before_install: gem install bundler -v 1.10.5
 before_script:
+    - cp .env.travis .env.test
     - psql -c 'create database travis_ci_test;' -U postgres
-    - lotus db migrate
+    - LOTUS_ENV=test bundle exec lotus db prepare
+    - LOTUS_ENV=test bundle exec lotus db migrate
 addons:
   postgresql: "9.2"
   code_climate:
