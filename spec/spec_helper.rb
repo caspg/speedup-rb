@@ -6,6 +6,9 @@ if ENV['TRAVIS']
   CodeClimate::TestReporter.start
 end
 
+require 'sidekiq/testing'
+Sidekiq::Testing.fake!
+
 require_relative '../config/environment'
 Lotus::Application.preload!
 
@@ -30,6 +33,10 @@ Dir[__dir__ + '/support/**/*.rb'].each { |f| require f }
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.before(:each) do
+    Sidekiq::Worker.clear_all
+  end
+
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
