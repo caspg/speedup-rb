@@ -7,5 +7,6 @@ collection :reports do
   attribute :id,         Integer
   attribute :owner,      String
   attribute :repo,       String
+  attribute :path,       String
   attribute :content,    PGJSON
 end
