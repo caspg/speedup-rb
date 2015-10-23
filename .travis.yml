@@ -11,3 +11,5 @@ addons:
   code_climate:
     repo_token:
       secure: 3114381b79144c596a639491c0ee58f038123920d2b2c89f53bb0e1e949b98b0
+env:
+  - SPEEDUP_RB_DATABASE_URL="postgres://postgres@localhost/travis_ci_test"
