@@ -12,6 +12,7 @@ gem 'pg'
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 group :test, :development do

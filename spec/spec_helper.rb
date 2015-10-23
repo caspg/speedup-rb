@@ -1,6 +1,11 @@
 # Require this file for unit tests
 ENV['LOTUS_ENV'] ||= 'test'
 
+if ENV['TRAVIS']
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+end
+
 require_relative '../config/environment'
 Lotus::Application.preload!
 
