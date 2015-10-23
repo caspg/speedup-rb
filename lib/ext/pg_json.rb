@@ -1,6 +1,7 @@
 require 'sequel'
 require 'lotus/model/coercer'
 require 'sequel/extensions/pg_json'
+require 'sequel/extensions/pg_json_ops'
 
 class PGJSON < Lotus::Model::Coercer
   def self.dump(value)
