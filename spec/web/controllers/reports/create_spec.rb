@@ -17,6 +17,11 @@ describe Web::Controllers::Reports::Create do
       expect(response[0]).to eq(302)
       expect(response[1]['Location']).to eq("/reports/#{report.id}")
     end
+
+    it 'creates new async job' do
+      expect { action.call(valid_params) }.to change(FastererWorker.jobs, :size).by(1)
+      expect(FastererWorker.jobs.last['args']).to eq([ReportRepository.last.id])
+    end
   end
 
   context 'with invalid params' do
@@ -30,6 +35,10 @@ describe Web::Controllers::Reports::Create do
       response = action.call(invalid_params)
 
       expect(response[0]).to eq(200)
+    end
+
+    it 'does not create new async job' do
+      expect { action.call(invalid_params) }.not_to change(FastererWorker.jobs, :size)
     end
   end
 end
