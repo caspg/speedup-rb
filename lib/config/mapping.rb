@@ -1,3 +1,5 @@
+require './lib/ext/pg_json'
+
 collection :reports do
   entity     Report
   repository ReportRepository
@@ -5,4 +7,5 @@ collection :reports do
   attribute :id,         Integer
   attribute :owner,      String
   attribute :repo,       String
+  attribute :content,    PGJSON
 end
