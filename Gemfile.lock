@@ -9,12 +9,31 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    celluloid (0.17.2)
+      celluloid-essentials
+      celluloid-extras
+      celluloid-fsm
+      celluloid-pool
+      celluloid-supervision
+      timers (>= 4.1.1)
+    celluloid-essentials (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-extras (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-fsm (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-pool (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-supervision (0.20.5)
+      timers (>= 4.1.1)
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
     columnize (0.9.0)
+    connection_pool (2.2.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     dotenv (2.0.2)
+    hitimes (1.2.3)
     http_router (0.11.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -62,6 +81,9 @@ GEM
     rack-test (0.6.3)
       rack (>= 1.0)
     rake (10.4.2)
+    redis (3.2.1)
+    redis-namespace (1.5.2)
+      redis (~> 3.0, >= 3.0.4)
     rspec (3.3.0)
       rspec-core (~> 3.3.0)
       rspec-expectations (~> 3.3.0)
@@ -79,6 +101,12 @@ GEM
     sequel (4.27.0)
     shotgun (0.9.1)
       rack (>= 1.0)
+    sidekiq (3.5.1)
+      celluloid (~> 0.17.2)
+      connection_pool (~> 2.2, >= 2.2.0)
+      json (~> 1.0)
+      redis (~> 3.2, >= 3.2.1)
+      redis-namespace (~> 1.5, >= 1.5.2)
     simplecov (0.10.0)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -86,6 +114,8 @@ GEM
     simplecov-html (0.10.0)
     thor (0.19.1)
     tilt (2.0.1)
+    timers (4.1.1)
+      hitimes
     url_mount (0.2.1)
       rack
     xpath (2.0.0)
@@ -105,6 +135,7 @@ DEPENDENCIES
   rake
   rspec
   sass
+  sidekiq
 
 BUNDLED WITH
    1.10.6
