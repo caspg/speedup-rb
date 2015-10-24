@@ -9,7 +9,6 @@ gem 'lotus-model', '~> 0.5'
 gem 'sass'
 gem 'pg'
 gem 'sidekiq'
-gem 'fasterer-github'
 
 group :test do
   gem 'rspec'
@@ -20,6 +19,7 @@ end
 
 group :test, :development do
   gem 'byebug'
+  gem 'fasterer-github'
 end
 
 group :production do
