@@ -6,6 +6,7 @@ module Web::Controllers::Reports
       param :report do
         param :owner, presence: true
         param :repo,  presence: true
+        param :path
       end
     end
 
