@@ -1,4 +1,4 @@
-module Workers
+module Web::Workers
   class Report
     include Sidekiq::Worker
 

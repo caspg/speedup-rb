@@ -12,7 +12,7 @@ module Web::Controllers::Reports
     def call(params)
       if params.valid?
         report = create_new_report
-        Workers::Report.perform_async(report.id)
+        Web::Workers::Report.perform_async(report.id)
 
         redirect_to routes.report_path(id: report.id)
       end

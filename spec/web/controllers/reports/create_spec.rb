@@ -1,6 +1,6 @@
 describe Web::Controllers::Reports::Create do
   let(:action) { described_class.new }
-  let(:worker) { Workers::Report }
+  let(:worker) { Web::Workers::Report }
 
   after { ReportRepository.clear }
 
