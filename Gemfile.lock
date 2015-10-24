@@ -149,6 +149,7 @@ DEPENDENCIES
   pg
   rake
   rspec
+  rspec-mocks
   sass
   sidekiq
 

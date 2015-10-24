@@ -13,6 +13,7 @@ gem 'fasterer-github'
 
 group :test do
   gem 'rspec'
+  gem 'rspec-mocks'
   gem 'capybara'
   gem 'codeclimate-test-reporter', require: nil
 end
