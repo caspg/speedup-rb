@@ -1,5 +1,6 @@
 describe Web::Controllers::Reports::Create do
   let(:action) { described_class.new }
+  let(:worker) { Workers::Report }
 
   after { ReportRepository.clear }
 
@@ -19,8 +20,8 @@ describe Web::Controllers::Reports::Create do
     end
 
     it 'creates new async job' do
-      expect { action.call(valid_params) }.to change(FastererWorker.jobs, :size).by(1)
-      expect(FastererWorker.jobs.last['args']).to eq([ReportRepository.last.id])
+      expect { action.call(valid_params) }.to change(worker.jobs, :size).by(1)
+      expect(worker.jobs.last['args']).to eq([ReportRepository.last.id])
     end
   end
 
@@ -38,7 +39,7 @@ describe Web::Controllers::Reports::Create do
     end
 
     it 'does not create new async job' do
-      expect { action.call(invalid_params) }.not_to change(FastererWorker.jobs, :size)
+      expect { action.call(invalid_params) }.not_to change(worker.jobs, :size)
     end
   end
 end

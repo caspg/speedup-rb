@@ -1,5 +1,3 @@
-require_relative '../../workers/fasterer_worker'
-
 module Web::Controllers::Reports
   class Create
     include Web::Action
@@ -14,7 +12,7 @@ module Web::Controllers::Reports
     def call(params)
       if params.valid?
         report = create_new_report
-        FastererWorker.perform_async(report.id)
+        Workers::Report.perform_async(report.id)
 
         redirect_to routes.report_path(id: report.id)
       end
@@ -28,4 +26,3 @@ module Web::Controllers::Reports
     end
   end
 end
-
