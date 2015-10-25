@@ -1,3 +1,48 @@
+$navbar-height: 70px;
+$navbar-brand-font-size: 20px;
+$body-font-size: 16px;
+
+body {
+  font-size: $body-font-size;
+}
+
 .navbar {
   margin-bottom: 100px;
+  height: $navbar-height;
+}
+
+.navbar-logo {
+  a {
+    padding: 0;
+    color: #777;
+    font-size: $navbar-brand-font-size;
+
+    svg {
+      padding-right: 5px;
+      height: $navbar-height;
+      width: $navbar-height;
+      fill: #777;
+    }
+
+    span {
+      position: absolute;
+      top: ($navbar-height - $navbar-brand-font-size) / 2;
+      left: $navbar-height;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: #333;
+    }
+
+    &:hover svg {
+      fill: #333;
+    }
+  }
+}
+
+.navbar-links {
+  position: absolute;
+  top: ($navbar-height - $body-font-size - 30) / 2;
+  right: 0;
 }
