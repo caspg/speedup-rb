@@ -6,3 +6,5 @@
 /apps/web/public/stylesheets/*.css
 
 .env.development
+
+bower_components/
