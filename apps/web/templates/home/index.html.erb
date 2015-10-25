@@ -1,35 +1,5 @@
-<% unless params.valid? %>
-  <div class="errors">
-    <h3>There was a problem with your submission</h3>
-    <ul>
-      <% params.errors.each do |error| %>
-        <li><%= error.attribute_name %> is required</li>
-      <% end %>
-    </ul>
+<div class="container">
+  <div class="col-md-offset-2 col-md-8">
+    <%= render partial: 'form' %>
   </div>
-<% end %>
-
-<%=
-  form_for :report, routes.reports_path, class: 'pure-form pure-form-aligned' do
-    fieldset do
-      div class: 'pure-control-group' do
-        label 'GitHub repo owner', for: :owner
-        text_field :owner, placeholder: 'caspg'
-      end
-
-      div class: 'pure-control-group' do
-        label 'GitHub repo name', for: :repo
-        text_field :repo, placeholder: 'speedup-rb'
-      end
-
-      div class: 'pure-control-group' do
-        label :path
-        text_field :path, placeholder: 'apps/web/controller (optional)'
-      end
-
-      div class: 'pure-controls' do
-        submit 'Create', class: 'pure-button pure-button-primary'
-      end
-    end
-  end
-%>
+</div>
