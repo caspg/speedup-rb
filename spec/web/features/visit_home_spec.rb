@@ -4,6 +4,6 @@ describe 'visit home' do
   it 'is successfull' do
     visit '/'
 
-    expect(page).to have_content('Speedup Rb')
+    expect(page).to have_content('Speedup rb')
   end
 end
