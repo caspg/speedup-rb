@@ -12,3 +12,13 @@ body {
     padding: 6px 40px;
   }
 }
+
+.has-error {
+  label {
+    color: #a94442;
+  }
+}
+
+.form-errors {
+  margin-bottom: 50px;
+}

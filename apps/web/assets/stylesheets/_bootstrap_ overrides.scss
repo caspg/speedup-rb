@@ -1,7 +1,15 @@
 .form-control {
-  border-radius: 2px;
+  border-radius: $element-border-radius;
 }
 
 .btn {
-  border-radius: 2px;
+  border-radius: $element-border-radius;
+}
+
+.alert {
+  border-radius: $element-border-radius;
+}
+
+label {
+  font-weight: 400;
 }
