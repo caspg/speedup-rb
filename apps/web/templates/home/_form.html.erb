@@ -1,28 +1,32 @@
-<%= error_presenter %>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= error_presenter %>
 
-<%=
-  form_for :report, routes.reports_path do
-    div class: 'col-md-6' do
-      div class: "form-group #{ error_class_for(:owner) }" do
-        label 'GitHub repo owner', for: :owner
-        text_field :owner, placeholder: 'caspg', class: 'form-control'
+    <%=
+      form_for :report, routes.reports_path do
+        div class: 'col-md-6' do
+          div class: "form-group #{ error_class_for(:owner) }" do
+            label 'GitHub repo owner', for: :owner
+            text_field :owner, placeholder: 'caspg', class: 'form-control'
+          end
+        end
+
+        div class: 'col-md-6' do
+          div class: "form-group #{ error_class_for(:repo) }" do
+            label 'GitHub repo name', for: :repo
+            text_field :repo, placeholder: 'speedup-rb', class: 'form-control'
+          end
+        end
+
+        div class: 'col-md-12' do
+          div class: "form-group #{ error_class_for(:path) }" do
+            label :path
+            text_field :path, placeholder: 'apps/web/controller (optional)', class: 'form-control'
+          end
+
+          submit 'Create', class: 'btn btn-primary'
+        end
       end
-    end
-
-    div class: 'col-md-6' do
-      div class: "form-group #{ error_class_for(:repo) }" do
-        label 'GitHub repo name', for: :repo
-        text_field :repo, placeholder: 'speedup-rb', class: 'form-control'
-      end
-    end
-
-    div class: 'col-md-12' do
-      div class: "form-group #{ error_class_for(:path) }" do
-        label :path
-        text_field :path, placeholder: 'apps/web/controller (optional)', class: 'form-control'
-      end
-
-      submit 'Create', class: 'btn btn-primary'
-    end
-  end
-%>
+    %>
+  </div>
+</div>
