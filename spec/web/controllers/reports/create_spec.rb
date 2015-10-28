@@ -5,7 +5,7 @@ describe Web::Controllers::Reports::Create do
   after { ReportRepository.clear }
 
   context 'with valid params' do
-    let(:valid_params) { Hash[report: { owner: 'owner', repo: 'repo' }] }
+    let(:valid_params) { Hash[report: { owner: 'owner', repo: 'repo', form_uuid: 'uuid' }] }
 
     it 'creates a new report' do
       expect{ action.call(valid_params) }.to change{ ReportRepository.all.size }.by(1)

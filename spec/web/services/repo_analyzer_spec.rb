@@ -6,7 +6,7 @@ describe Web::Services::RepoAnalyzer do
 
   after { ReportRepository.clear }
 
-  let(:report_params) { { owner: 'owner', repo: 'repo', content: nil } }
+  let(:report_params) { { owner: 'owner', repo: 'repo', content: nil, form_uuid: 'uuid' } }
   let(:report) { ReportRepository.create(Report.new(report_params)) }
   let(:fasterer_response) { { some: 'hash_response' } }
 

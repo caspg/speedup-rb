@@ -1,7 +1,7 @@
-require_relative '../../../../apps/web/controllers/reports/show'
-
 describe Web::Controllers::Reports::Show do
-  before { @report = ReportRepository.create(Report.new(owner: 'owner', repo:  'repo')) }
+  before do
+    @report = ReportRepository.create(Report.new(owner: 'owner', repo:  'repo', form_uuid: 'uuid'))
+  end
   after { ReportRepository.clear }
 
   let(:action) { described_class.new }
