@@ -13,9 +13,13 @@ module Web::Controllers::Reports
 
     def call(params)
       if params.valid?
-        report = create_new_report
-        Web::Workers::Report.perform_async(report.id)
+        begin
+          report = create_new_report
+        rescue Sequel::UniqueConstraintViolation
+          return nil
+        end
 
+        Web::Workers::Report.perform_async(report.id)
         redirect_to routes.report_path(id: report.id)
       end
     end
