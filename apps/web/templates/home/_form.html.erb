@@ -6,14 +6,14 @@
 
     div class: 'col-md-6' do
       div class: "form-group #{ error_class_for(:owner) }" do
-        label 'GitHub repo owner', for: :owner
+        label 'GitHub repo owner', for: :owner, class: 'required'
         text_field :owner, placeholder: 'caspg', class: 'form-control'
       end
     end
 
     div class: 'col-md-6' do
       div class: "form-group #{ error_class_for(:repo) }" do
-        label 'GitHub repo name', for: :repo
+        label 'GitHub repo name', for: :repo, class: 'required'
         text_field :repo, placeholder: 'speedup-rb', class: 'form-control'
       end
     end
@@ -24,7 +24,7 @@
         text_field :path, placeholder: 'apps/web/controller (optional)', class: 'form-control'
       end
 
-      submit 'Create', class: 'btn btn-primary'
+      submit 'Create', class: 'btn btn-primary', id: 'form-submit'
     end
   end
 %>

@@ -24,3 +24,10 @@ body {
 .form-errors {
   margin-bottom: 50px;
 }
+
+.required {
+  &:after {
+    content: " *";
+    color: $blue;
+  }
+}
