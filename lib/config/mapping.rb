@@ -9,4 +9,6 @@ collection :reports do
   attribute :repo,       String
   attribute :path,       String
   attribute :content,    PGJSON
+  attribute :form_uuid,  String
+  attribute :url_uuid,   String
 end
