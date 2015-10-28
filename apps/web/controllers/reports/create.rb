@@ -4,8 +4,8 @@ module Web::Controllers::Reports
 
     params do
       param :report do
-        param :owner, presence: true, format: /^\w+$/
-        param :repo,  presence: true, format: /^\w+$/
+        param :owner, presence: true, format: /^\S+$/
+        param :repo,  presence: true, format: /^\S+$/
         param :path
       end
     end
