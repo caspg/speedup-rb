@@ -6,7 +6,8 @@ module Web::Controllers::Reports
       param :report do
         param :owner, presence: true, format: /^\S+$/
         param :repo,  presence: true, format: /^\S+$/
-        param :path
+        param :path, format: /^\S*$/
+        param :form_uuid
       end
     end
 
