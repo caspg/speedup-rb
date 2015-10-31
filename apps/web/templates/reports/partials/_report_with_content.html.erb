@@ -1,0 +1,14 @@
+<% report.content['fasterer_offences'].each do |offence, occurrences| %>
+  <div class="offence-section">
+    <h4>
+      <%= offence %> 
+      <a href="#">
+        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      </a>
+    </h4>
+    <% occurrences.each do |occurrence| %>
+      <p>file: <%= occurrence['path'] %></p>
+      <p>lines: <%= occurrence['lines'].join(', ') %></p>
+    <% end %>
+  </div>
+<% end %>

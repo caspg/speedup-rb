@@ -5,11 +5,14 @@
         <h3>
           Report for <span class="repo-full-name"><%= repo_full_name %></span>
         </h3>
-        <p class="path"><%= report.path if report.path %></p>
       </div>
 
       <div class="panel-body">
-        <%= render partial: 'report_no_content' %>
+        <% if report.content %>
+          <%= render partial: 'report_with_content' %>
+        <% else %>
+          <%= render partial: 'report_no_content' %>
+        <% end %>
       </div>
     </div>
   </div>

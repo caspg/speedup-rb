@@ -1,5 +1,5 @@
 .repo-full-name {
-  color: $dark-blue;
+  color: $blue;
 }
 
 .report-panel {
@@ -22,6 +22,14 @@
       border: 1px solid #e3e3e3;
       padding: 20px;
       margin-top: 10px;
+    }
+  }
+}
+
+.offence-section {
+  h4 {
+    a {
+      margin-left: 10px;
     }
   }
 }
