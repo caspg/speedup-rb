@@ -42,4 +42,18 @@ describe Web::Controllers::Reports::Create do
       expect { action.call(invalid_params) }.not_to change(worker.jobs, :size)
     end
   end
+
+  context 'when form is submited multiple times' do
+    let(:valid_params) { Hash[report: { owner: 'owner', repo: 'repo', form_uuid: 'uuid' }] }
+
+    before(:each) { action.call(valid_params) }
+
+    it 'does not create new Report' do
+      expect{ action.call(valid_params) }.not_to change{ ReportRepository.all.size }
+    end
+
+    it 'does not create new async job' do
+      expect { action.call(valid_params) }.not_to change(worker.jobs, :size)
+    end
+  end
 end
