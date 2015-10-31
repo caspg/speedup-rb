@@ -6,8 +6,10 @@
   margin-top: 50px;
 
   .panel-heading {
+    background-color: white;
     padding-left: 30px;
     padding-right: 30px;
+    color: #777;
 
     .path {
       font-style: italic;
@@ -20,6 +22,8 @@
     padding-right: 30px;
  
     .report-link {
+      margin-top: 20px;
+      margin-bottom: 40px;
       min-height: 60px;
       padding: 20px;
       border: 1px solid #e3e3e3;
