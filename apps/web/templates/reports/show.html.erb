@@ -5,18 +5,11 @@
         <h3>
           Report for <span class="repo-full-name"><%= repo_full_name %></span>
         </h3>
-        <% if report.path %>
-        <p class="path"><%= report.path %></p>
-        <% end %>
+        <p class="path"><%= report.path if report.path %></p>
       </div>
 
       <div class="panel-body">
-
-
-        <p>Your report will be ready soon.</p>
-        <p>Refresh this page after a while, or copy below link and come back later.</p>
-
-        <input type="text" class="form-control report-link" value="<%= report_full_url %>" readonly> 
+        <%= render partial: 'report_no_content' %>
       </div>
     </div>
   </div>
