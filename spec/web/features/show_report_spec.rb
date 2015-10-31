@@ -9,6 +9,6 @@ describe 'Show report' do
   it 'displays github repo owner and repo name' do
     visit "/reports/#{report.id}"
 
-    expect(page).to have_content('Report for owner/repo')
+    expect(page).to have_content('Report for owner / repo')
   end
 end

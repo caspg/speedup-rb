@@ -3,10 +3,10 @@ module Web::Views::Reports
     include Web::View
 
     def repo_full_name
-      "#{report.owner}/#{report.repo}"
+      "#{report.owner} / #{report.repo}"
     end
 
-    def report_url
+    def report_full_url
       routes.report_url(id: report.id)
     end
   end

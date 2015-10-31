@@ -6,7 +6,7 @@
           Report for <span class="repo-full-name"><%= repo_full_name %></span>
         </h3>
         <% if report.path %>
-          <p><%= report.path %></p>
+        <p class="path"><%= report.path %></p>
         <% end %>
       </div>
 
@@ -16,7 +16,7 @@
         <p>Your report will be ready soon.</p>
         <p>Refresh this page after a while, or copy below link and come back later.</p>
 
-        <div class="well"><%= report_url %></div>
+        <input type="text" class="form-control report-link" value="<%= report_full_url %>" readonly> 
       </div>
     </div>
   </div>
