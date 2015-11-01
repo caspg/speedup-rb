@@ -22,3 +22,14 @@
 
   </div>
 <% end %>
+
+<% unless fasterer_parse_errors.empty? %>
+  <div class="parse-error-section">
+    <h4>Parse error occured in following files:</h4>
+    <div class="parse-error-items">
+      <% fasterer_parse_errors.each do |error| %>
+        <p><%= error['path'] %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>

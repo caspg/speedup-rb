@@ -27,8 +27,12 @@
   }
 }
 
+.no-content {
+  padding: 40px;
+}
+
 .offence-section {
-  padding: 20px 30px;
+  padding: 20px 40px;
   border-bottom: 1px solid #ddd;
 
   .offence-item {
@@ -51,5 +55,16 @@
     a {
       margin-left: 10px;
     }
+  }
+}
+
+.parse-error-section {
+  padding: 20px 30px;
+  border-bottom: 1px solid #ddd;
+
+  .parse-error-items {
+    padding: 10px;
+    border-left: 6px solid $red;
+    background-color: #f5f5f5;
   }
 }

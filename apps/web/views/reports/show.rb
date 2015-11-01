@@ -31,6 +31,10 @@ module Web::Views::Reports
       "https://github.com/JuanitoFatas/fast-ruby##{anchor}"
     end
 
+    def fasterer_parse_errors
+      report.content['errors']
+    end
+
     private
 
     def fasterer_offences_details
