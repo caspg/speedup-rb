@@ -9,5 +9,9 @@ module Web::Views::Reports
     def report_full_url
       routes.report_url(id: report.id)
     end
+
+    def fasterer_offences
+      report.content['fasterer_offences']
+    end
   end
 end
