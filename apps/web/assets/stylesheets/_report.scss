@@ -36,6 +36,15 @@
     margin: 20px 0px;
     padding: 10px 10px;
     background-color: #f5f5f5;
+
+    a {
+      color: #777;
+      text-decoration: underline;
+
+      &:hover {
+        color: $dark-blue;
+      }
+    }
   }
 
   h4 {

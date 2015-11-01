@@ -1,16 +1,22 @@
 <% fasterer_offences.each do |offence, occurrences| %>
   <div class="offence-section">
     <h4>
-      <%= offence %>
-      <a href="#">
+      <%= pretty_title(offence) %>
+      <a href="<%= url_to_fast_ruby_repo(offence) %>">
         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
       </a>
     </h4>
+    <small><%= offence_explanaition(offence) %></small>
 
       <% occurrences.each do |occurrence| %>
         <div class="offence-item">
-            <p>file: <%= occurrence['path'] %></p>
-            <p>lines: <%= occurrence['lines'].join(', ') %></p>
+          <p>file: <%= occurrence['path'] %></p>
+          <p>
+            lines:
+            <% occurrence['lines'].each do |line| %>
+              <a href="<%= url_to_github(occurrence, line) %>"><%= line %></a>
+            <% end %>
+          </p>
         </div>
       <% end %>
 
