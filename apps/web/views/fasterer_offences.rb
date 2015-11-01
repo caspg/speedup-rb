@@ -89,7 +89,11 @@ module Web::Views
         },
         getter_vs_attr_reader: {
           fast_ruby_repo: 'attr_accessor-vs-getter-and-setter-code',
-          pretty_title: 'attr_accessor vs getter and setter'
+          pretty_title: 'attr_reader vs getter'
+        },
+        setter_vs_attr_writer: {
+          fast_ruby_repo: 'attr_accessor-vs-getter-and-setter-code',
+          pretty_title: 'attr_writer vs setter'
         },
         include_vs_cover_on_range: {
           fast_ruby_repo: 'cover-vs-include-code',

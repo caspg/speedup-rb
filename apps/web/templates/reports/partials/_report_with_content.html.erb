@@ -1,3 +1,9 @@
+<% if empty_content? %>
+  <div class="empty-content">
+    <h3>Huuray! No Fasterer offences was found!</h3>
+  </div>
+<% end %>
+
 <% fasterer_offences.each do |offence, occurrences| %>
   <div class="offence-section">
     <h4>
