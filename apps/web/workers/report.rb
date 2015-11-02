@@ -3,7 +3,7 @@ module Web::Workers
     include Sidekiq::Worker
 
     def perform(report_id)
-      Web::Services::RepoAnalyzer.new(report_id).call
+      Web::Services::ReportWorkerFlow.new(report_id).call
     end
   end
 end
