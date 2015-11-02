@@ -4,7 +4,7 @@ describe Web::Views::Reports::Show do
   let(:report)    { Report.new(id: 1, owner: 'owner', repo: 'repo') }
   let(:exposures) { Hash[report: report] }
   let(:template)  { Lotus::View::Template.new('apps/web/templates/reports/show.html.erb') }
-  let(:view)      { described_class.new(template, exposures) }
+  let(:view)      { described_class.new(template, exposures.merge(format: :html)) }
   let(:rendered)  { view.render }
 
   it 'exposes #report' do
