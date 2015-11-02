@@ -1,7 +1,7 @@
 class ApiResponse
   # reset it's a unix timestamp
   def parsed_response
-    { 'resources' => { 'remaining' => 999, 'reset' => 1446476769 } }
+    { 'resources' => { 'core' => { 'remaining' => 999, 'reset' => 1446476769 } } }
   end
 end
 

@@ -11,7 +11,7 @@ module Web::Services
     private
 
     def parsed_response
-      @parsed_response ||= api_response.parsed_response['resources']
+      @parsed_response ||= api_response.parsed_response['resources']['core']
     end
 
     def api_response
