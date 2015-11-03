@@ -32,18 +32,17 @@
 <% unless fasterer_parse_errors.empty? %>
   <div class="error-section">
     <h4>Parse error occured in following files:</h4>
-    <div class="error-items">
       <% fasterer_parse_errors.each do |error| %>
-        <p><%= error['path'] %></p>
+        <div class="error-items">
+          <p><%= error['path'] %></p>
+        </div>
       <% end %>
-    </div>
   </div>
 <% end %>
 
 <% unless fasterer_api_errors.empty? %>
   <div class="error-section">
     <h4>GitHub Api erros:</h4>
-
       <% fasterer_api_errors.each do |error| %>
         <div class="error-items">
           <p><%= error['msg_body'] %></p>
