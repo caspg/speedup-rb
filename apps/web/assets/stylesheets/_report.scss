@@ -75,6 +75,15 @@
     p {
       margin: 0;
     }
+
+    a {
+      color: #777;
+      text-decoration: underline;
+
+      &:hover {
+        color: $dark-blue;
+      }
+    }
   }
 
   h4 {

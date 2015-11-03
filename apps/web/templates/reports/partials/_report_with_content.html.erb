@@ -20,7 +20,7 @@
           <p>
             lines:
             <% occurrence['lines'].each do |line| %>
-              <a href="<%= url_to_github(occurrence, line) %>"><%= line %></a>
+              <a href="<%= url_to_github(occurrence['path'], line) %>"><%= line %></a>
             <% end %>
           </p>
         </div>
@@ -34,7 +34,7 @@
     <h4>Parse error occured in following files:</h4>
       <% fasterer_parse_errors.each do |error| %>
         <div class="error-items">
-          <p><%= error['path'] %></p>
+        <a href="<%= url_to_github(error['path']) %>"><%= error['path'] %></a>
         </div>
       <% end %>
   </div>

@@ -18,8 +18,9 @@ module Web::Views::Reports
       report.content['fasterer_offences']
     end
 
-    def url_to_github(occurrence, line)
-      "https://github.com/#{report.owner}/#{report.repo}/blob/master/#{occurrence['path']}#L#{line}"
+    def url_to_github(path, line = nil)
+      line_param = line.nil? ? nil : "#L#{line}"
+      "https://github.com/#{report.owner}/#{report.repo}/blob/master/#{path}#{line_param}"
     end
 
     def pretty_title(offence)
