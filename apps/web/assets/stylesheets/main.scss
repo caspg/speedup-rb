@@ -12,6 +12,7 @@ html {
 
 body {
   font-size: $body-font-size;
+  font-weight: 300;
   color: $grey;
   /* Margin bottom by footer height plus margin top */
   margin-bottom: $footer-height + 80px;

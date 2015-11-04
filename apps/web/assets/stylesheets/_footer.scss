@@ -1,11 +1,41 @@
 .footer {
   position: absolute;
+  display: table;
   bottom: 0;
   width: 100%;
   height: $footer-height;
   background-color: $light-grey;
+  font-size: $body-font-size * 0.8;
+  color: $footer-text-color;
+  border-top: 1.5px solid $main;
 
-  p {
-    color: darken($light-grey, 20);
+  .container-fluid {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
   }
+
+  a {
+    color: $footer-text-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken($light-grey, 60);
+    }
+  }
+}
+
+.github-icon {
+  margin-left: 5px;
+  width: 20px;
+  height: auto;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.logo-credit {
+  margin-top: 10px;
 }
