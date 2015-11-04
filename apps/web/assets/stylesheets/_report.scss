@@ -1,5 +1,5 @@
 .repo-full-name {
-  color: $blue;
+  color: $main;
 }
 
 .report-panel {
@@ -35,8 +35,16 @@
   padding: 20px 40px;
   border-bottom: 1px solid #ddd;
 
+  a {
+    color: $main;
+
+    &:hover {
+      color: $dark-main;
+    }
+  }
+
   .offence-item {
-    border-left: 6px solid $blue;
+    border-left: 6px solid $main;
     margin: 20px 0px;
     padding: 15px;
     background-color: #f5f5f5;
@@ -46,7 +54,7 @@
       text-decoration: underline;
 
       &:hover {
-        color: $dark-blue;
+        color: $dark-main;
       }
     }
 
@@ -81,7 +89,7 @@
       text-decoration: underline;
 
       &:hover {
-        color: $dark-blue;
+        color: $dark-main;
       }
     }
   }

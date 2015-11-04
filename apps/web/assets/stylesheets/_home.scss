@@ -1,3 +1,31 @@
 .index-form {
   margin-top: 50px;
+  margin-bottom: 200px;
+
+  .form-button {
+    padding: 6px 40px;
+    background-color: $main;
+    color: white;
+
+    &:hover {
+      background-color: $dark-main;
+    }
+  }
+}
+
+.has-error {
+  label {
+    color: #a94442;
+  }
+}
+
+.form-errors {
+  margin-bottom: 50px;
+}
+
+.required {
+  &:after {
+    content: " *";
+    color: $main;
+  }
 }

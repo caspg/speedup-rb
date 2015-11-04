@@ -24,11 +24,11 @@
 
     &:hover span {
       text-decoration: underline;
-      color: $dark-blue;
+      color: $dark-main;
     }
 
     &:hover svg {
-      fill: $dark-blue;
+      fill: $dark-main;
     }
   }
 }
@@ -45,7 +45,7 @@
 
     &:hover {
       text-decoration: underline;
-      color: $dark-blue;
+      color: $dark-main;
     }
   }
 }
