@@ -1,6 +1,7 @@
 module Web::Controllers::Reports
   class Create
     include Web::Action
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
     params do
       param :report do
@@ -8,6 +9,7 @@ module Web::Controllers::Reports
         param :repo,  presence: true, format: /^\S+$/
         param :path, format: /^\S*$/
         param :form_uuid
+        param :email, format: VALID_EMAIL_REGEX
       end
     end
 

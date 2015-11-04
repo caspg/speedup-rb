@@ -1,8 +1,11 @@
 class NewReportParams < Lotus::Action::Params
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+
   param :report do
     param :owner, presence: true, format: /^\S+$/
     param :repo, presence: true, format: /^\S+$/
     param :path, format: /^\S+$/
+    param :email, format: VALID_EMAIL_REGEX
   end
 end
 
@@ -31,7 +34,9 @@ describe Web::Views::Reports::Create do
   end
 
   context 'when params are invalid' do
-    let(:param_hash) { { report: { owner: 'owner name', repo: 'repo name', path: 'some/ path' } } }
+    let(:param_hash) do
+      { report: { owner: 'owner name', repo: 'repo name', path: 'some/ path', email: 'wrong email' } }
+    end
     let(:params) { NewReportParams.new(param_hash) }
 
     it 'displays list of errors' do
@@ -40,10 +45,11 @@ describe Web::Views::Reports::Create do
       expect(rendered).to include('owner: white spaces are not allowed.')
       expect(rendered).to include('repo: white spaces are not allowed.')
       expect(rendered).to include('path: white spaces are not allowed.')
+      expect(rendered).to include('email: wrong format.')
     end
 
     it 'adds error-class to form' do
-      expect(rendered.scan(/has-error/).size).to eq(3)
+      expect(rendered.scan(/has-error/).size).to eq(4)
     end
   end
 

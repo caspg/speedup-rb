@@ -24,6 +24,15 @@
         text_field :path, placeholder: 'apps/web/controller (optional)', class: 'form-control'
       end
 
+    end
+    div class: 'col-md-12' do
+      div class: "form-group #{ error_class_for(:email) }" do
+        label :email
+        span class: "email-info" do
+          'get an email notification when report is ready'
+        end
+        text_field :email, placeholder: '(optional)', class: 'form-control'
+      end
       submit 'Create', class: 'btn form-button', id: 'form-submit'
     end
   end

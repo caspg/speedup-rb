@@ -1,6 +1,5 @@
 .index-form {
   margin-top: 50px;
-  margin-bottom: 200px;
 
   .form-button {
     padding: 6px 40px;
@@ -10,6 +9,10 @@
     &:hover {
       background-color: $dark-main;
     }
+  }
+
+  .email-info {
+    font-size: 0.8em;
   }
 }
 

@@ -3,4 +3,8 @@
   <p>Refresh this page after a while, or copy below link and come back later.</p>
 
   <input type="text" class="form-control report-link" value="<%= report_full_url %>" readonly>
+
+  <% unless report.email.to_s.empty? %>
+    <p>You will also receive an <b>email notification</b> when report is ready.</p>
+  <% end %>
 </div>

@@ -11,4 +11,5 @@ collection :reports do
   attribute :content,    PGJSON
   attribute :form_uuid,  String
   attribute :url_uuid,   String
+  attribute :email,      String
 end
