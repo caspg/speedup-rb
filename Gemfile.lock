@@ -1,3 +1,18 @@
+GIT
+  remote: git://github.com/lotus/utils.git
+  revision: 55f612785b9ee23e047afde68c59add2309ef091
+  branch: 0.6.x
+  specs:
+    lotus-utils (0.6.0)
+
+GIT
+  remote: git://github.com/lotus/validations.git
+  revision: f0b90201bfba9947744703c0e9313be5080eb785
+  branch: master
+  specs:
+    lotus-validations (0.3.3)
+      lotus-utils (~> 0.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -67,9 +82,6 @@ GEM
     lotus-router (0.4.3)
       http_router (~> 0.11)
       lotus-utils (~> 0.5, >= 0.5.1)
-    lotus-utils (0.5.2)
-    lotus-validations (0.3.3)
-      lotus-utils (~> 0.5)
     lotus-view (0.4.4)
       lotus-utils (~> 0.5)
       tilt (~> 2.0, >= 2.0.1)
@@ -149,6 +161,8 @@ DEPENDENCIES
   fasterer-github
   letter_opener
   lotus-model (~> 0.5)
+  lotus-utils (~> 0.6)!
+  lotus-validations!
   lotusrb (= 0.5.0)
   pg
   rake

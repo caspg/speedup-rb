@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'bundler'
 gem 'rake'
 
+gem 'lotus-utils', '~> 0.6', require: false, github: 'lotus/utils', branch: '0.6.x'
+gem 'lotus-validations', github: 'lotus/validations', branch: 'master'
 gem 'lotusrb',     '0.5.0'
 gem 'lotus-model', '~> 0.5'
 
