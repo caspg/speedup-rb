@@ -7,6 +7,7 @@ module Web::Services
     def call
       results = analyze_repo
       update_report(results)
+      send_notification unless report.email.nil? || report.email.empty?
     end
 
     private
@@ -20,6 +21,10 @@ module Web::Services
     def update_report(results)
       report.content = results
       ReportRepository.update(report)
+    end
+
+    def send_notification
+      Mailers::Notification.deliver(report: report)
     end
   end
 end

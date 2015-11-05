@@ -1,7 +1,7 @@
 /db/speedup-rb_development
 /db/speedup-rb_test
 
-/tmp/.sass-cache/
+/tmp
 *.map
 /apps/web/public/stylesheets/*.css
 

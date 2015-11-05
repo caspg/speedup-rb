@@ -45,7 +45,7 @@ Lotus::Mailer.configure do
 
   # See http://lotusrb.org/guides/mailers/delivery
   delivery do
-    development :test
+    development LetterOpener::DeliveryMethod, location: File.expand_path('../../tmp/letter_opener', __FILE__)
     test        :test
     # production :stmp, address: ENV['SMTP_PORT'], port: 1025
   end
