@@ -17,12 +17,12 @@ group :test do
 end
 
 group :test, :development do
-  gem 'byebug'
-
   # Move those gems to :default group, when bugfix for lotus will be released,
   # or move them also to production.
   gem 'fasterer-github'
+  gem 'byebug'
   gem 'sidekiq'
+  gem 'letter_opener'
 end
 
 group :production do
