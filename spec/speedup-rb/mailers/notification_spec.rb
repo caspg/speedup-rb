@@ -13,7 +13,7 @@ describe Mailers::Notification do
     mail = Lotus::Mailer.deliveries.last
 
     expect(mail.to).to eq([report.email])
-    expect(mail.subject).to eq('Your report is ready!')
+    expect(mail.subject).to eq('Report for owner/repo is ready!')
     expect(mail.body.encoded).to include(report_uri)
   end
 end
