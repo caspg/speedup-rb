@@ -3,7 +3,7 @@ module Web::Views::Reports
     include Web::View
 
     def empty_content?
-      fasterer_offences.empty? && fasterer_parse_errors.empty? && fasterer_api_errors.empty?
+      report.content.nil? || fasterer_offences.empty? && fasterer_parse_errors.empty? && fasterer_api_errors.empty?
     end
 
     def repo_full_name
