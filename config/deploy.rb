@@ -21,6 +21,7 @@ set :linked_files,    %w{.env}
 set :linked_dirs,     %w(apps/web/public/bower_components)
 
 set :sidekiq_require, "#{release_path}/config/loader.rb"
+set :sidekiq_config,  "#{release_path}/config/sidekiq.yml"
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
