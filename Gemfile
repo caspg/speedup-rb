@@ -19,8 +19,6 @@ group :test do
 end
 
 group :test, :development do
-  # Move those gems to :default group, when bugfix for lotus will be released,
-  # or move them also to production.
   gem 'fasterer-github'
   gem 'byebug'
   gem 'sidekiq'
@@ -28,5 +26,17 @@ group :test, :development do
 end
 
 group :production do
-  # gem 'puma'
+  gem 'fasterer-github'
+  gem 'sidekiq'
+  gem 'letter_opener'
 end
+
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
+
+gem 'puma'
