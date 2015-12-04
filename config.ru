@@ -1,3 +1,4 @@
+Encoding.default_external = 'UTF-8'
 require './config/environment'
 
 # Enable sass
