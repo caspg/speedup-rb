@@ -16,7 +16,7 @@ $grey: #777;
 $light-grey: #f8f8f8;
 $red: #d9534f;
 
-$navbar-bg-color: white;
+$navbar-bg-color: $light-grey;
 $navbar-color: $grey;
 $navbar-hover-color: $dark-grey;
 $footer-text-color: darken($light-grey, 30);
