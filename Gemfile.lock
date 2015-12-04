@@ -67,7 +67,7 @@ GEM
     fasterer (0.1.11)
       colorize (~> 0.7)
       ruby_parser (~> 3.6)
-    fasterer-github (0.2.1)
+    fasterer-github (0.2.2)
       fasterer (= 0.1.11)
       httparty
     hitimes (1.2.3)
