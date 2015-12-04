@@ -47,6 +47,13 @@ Lotus::Mailer.configure do
   delivery do
     development LetterOpener::DeliveryMethod, location: File.expand_path('../../tmp/letter_opener', __FILE__)
     test        :test
-    # production :stmp, address: ENV['SMTP_PORT'], port: 1025
+    production  :smtp,
+      address:              "smtp.gmail.com",
+      port:                 587,
+      domain:               "speedup-rb.com",
+      user_name:            ENV['SMTP_USERNAME'],
+      password:             ENV['SMTP_PASSWORD'],
+      authentication:       "plain",
+      enable_starttls_auto: true
   end
 end.load!
