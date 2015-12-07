@@ -20,19 +20,22 @@ module Web::Views
         h4('There was a problem with your submission:')
         ul do
           errors.to_h.each do |_k, errors|
-            li("#{ errors.first.attribute_name }: #{ error_message(errors) }")
+            li("#{ params_hash[errors.first.attribute_name] }: #{ error_message(errors) }")
           end
         end
       end
     end
 
     def error_message(errors)
-      return 'wrong format.' if errors.first.attribute_name == 'email'
       error_message_hash[errors.first.validation]
     end
 
+    def params_hash
+      { 'repo_full' => 'repo', 'path' => 'path', 'email' => 'email' }
+    end
+
     def error_message_hash
-      { presence: 'is required.', format: 'white spaces are not allowed.' }
+      { presence: 'is required.', format: 'wrong format.' }
     end
 
     def attribute_has_error?(attribute)

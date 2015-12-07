@@ -4,24 +4,17 @@
   form_for :report, routes.reports_path do
     hidden_field :form_uuid, value: SecureRandom.uuid
 
-    div class: 'col-md-6' do
-      div class: "form-group #{ error_class_for(:owner) }" do
-        label 'GitHub repo owner', for: :owner, class: 'required'
-        text_field :owner, placeholder: 'caspg', class: 'form-control'
-      end
-    end
-
-    div class: 'col-md-6' do
-      div class: "form-group #{ error_class_for(:repo) }" do
-        label 'Repo name', for: :repo, class: 'required'
-        text_field :repo, placeholder: 'fasterer-offences', class: 'form-control'
+    div class: 'col-md-12' do
+      div class: "form-group #{ error_class_for(:repo_full) }" do
+        label 'GitHub repo', for: :repo_full, class: 'required'
+        text_field :repo_full, placeholder: 'caspg/fasterer-offences', class: 'form-control'
       end
     end
 
     div class: 'col-md-12' do
       div class: "form-group #{ error_class_for(:path) }" do
-        label :path
-        text_field :path, placeholder: 'apps/web/controller (optional)', class: 'form-control'
+        label :path, class: 'required'
+        text_field :path, placeholder: 'apps/web/controllers', class: 'form-control'
       end
 
     end

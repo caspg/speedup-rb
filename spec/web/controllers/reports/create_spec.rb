@@ -5,7 +5,7 @@ describe Web::Controllers::Reports::Create do
   after { ReportRepository.clear }
 
   context 'with valid params' do
-    let(:valid_params) { Hash[report: { owner: 'owner', repo: 'repo', form_uuid: 'uuid' }] }
+    let(:valid_params) { Hash[report: { repo_full: 'owner/repo', form_uuid: 'uuid', path: 'path/' }] }
 
     it 'creates a new report' do
       expect{ action.call(valid_params) }.to change{ ReportRepository.all.size }.by(1)
@@ -44,7 +44,7 @@ describe Web::Controllers::Reports::Create do
   end
 
   context 'when form is submited multiple times' do
-    let(:valid_params) { Hash[report: { owner: 'owner', repo: 'repo', form_uuid: 'uuid' }] }
+    let(:valid_params) { Hash[report: { repo_full: 'owner/repo', form_uuid: 'uuid', path: 'path/' }] }
 
     before(:each) { action.call(valid_params) }
 

@@ -5,9 +5,8 @@ module Web::Controllers::Reports
 
     params do
       param :report do
-        param :owner, presence: true, format: /^\S+$/
-        param :repo,  presence: true, format: /^\S+$/
-        param :path, format: /^\S*$/
+        param :repo_full,  presence: true, format: /^\S+\/\S+$/
+        param :path, presence: true, format: /^\w+\S*$/
         param :form_uuid
         param :email, format: VALID_EMAIL_REGEX
       end
@@ -29,7 +28,8 @@ module Web::Controllers::Reports
     private
 
     def create_new_report
-      new_report = Report.new(params[:report])
+      owner, repo = params[:report][:repo_full].split('/')
+      new_report = Report.new(params[:report].to_h.merge!(owner: owner, repo: repo))
       ReportRepository.create(new_report)
     end
   end

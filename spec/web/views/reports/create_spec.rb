@@ -2,9 +2,9 @@ class NewReportParams < Lotus::Action::Params
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
   param :report do
-    param :owner, presence: true, format: /^\S+$/
-    param :repo, presence: true, format: /^\S+$/
-    param :path, format: /^\S+$/
+    param :repo_full,  presence: true, format: /^\S+\/\S+$/
+    param :path, presence: true, format: /^\S*$/
+    param :form_uuid
     param :email, format: VALID_EMAIL_REGEX
   end
 end
@@ -23,8 +23,8 @@ describe Web::Views::Reports::Create do
     it 'displays list of errors' do
       expect(rendered).to include('form-errors')
       expect(rendered).to include('There was a problem with your submission')
-      expect(rendered).to include('owner: is required.')
       expect(rendered).to include('repo: is required.')
+      expect(rendered).to include('path: is required.')
     end
 
     it 'adds error-class to form' do
@@ -35,26 +35,25 @@ describe Web::Views::Reports::Create do
 
   context 'when params are invalid' do
     let(:param_hash) do
-      { report: { owner: 'owner name', repo: 'repo name', path: 'some/ path', email: 'wrong email' } }
+      { report: { repo_full: 'owner / repo', path: 'some/ path', email: 'wrong email' } }
     end
     let(:params) { NewReportParams.new(param_hash) }
 
     it 'displays list of errors' do
       expect(rendered).to include('form-errors')
       expect(rendered).to include('There was a problem with your submission')
-      expect(rendered).to include('owner: white spaces are not allowed.')
-      expect(rendered).to include('repo: white spaces are not allowed.')
-      expect(rendered).to include('path: white spaces are not allowed.')
+      expect(rendered).to include('repo: wrong format.')
+      expect(rendered).to include('path: wrong format.')
       expect(rendered).to include('email: wrong format.')
     end
 
     it 'adds error-class to form' do
-      expect(rendered.scan(/has-error/).size).to eq(4)
+      expect(rendered.scan(/has-error/).size).to eq(3)
     end
   end
 
   context 'when params are valid' do
-    let(:params) { NewReportParams.new({ report: { owner: 'owner', repo: 'repo' } }) }
+    let(:params) { NewReportParams.new({ report: { repo_full: 'owner/repo', path: 'path/' } }) }
 
     it 'does not display list of errors' do
       expect(rendered).not_to include('form-errors')
