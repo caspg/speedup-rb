@@ -44,14 +44,16 @@ module Web
 
       # URI host used by the routing system to generate absolute URLs
       # Defaults to "localhost"
-      #
-      # host 'example.org'
+
+      if Lotus.env == 'production'
+        host 'speedup-rb.xyz'
+        port 80
+      end
 
       # URI port used by the routing system to generate absolute URLs
       # Argument: An object coercible to integer, default to 80 if the scheme is http and 443 if it's https
       # This SHOULD be configured only in case the application listens to that non standard ports
       #
-      # port 443
 
       # Enable cookies
       # Argument: boolean to toggle the feature
