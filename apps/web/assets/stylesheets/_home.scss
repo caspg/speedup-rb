@@ -39,3 +39,12 @@
     color: $main;
   }
 }
+
+.info-box {
+  padding: 20px;
+
+  .info-icon {
+    padding-right: 15px;
+    color: lighten($grey, 20);
+  }
+}
