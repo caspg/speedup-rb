@@ -6,7 +6,9 @@
 
 http://speedup-rb.xyz/
 
-Analyze your open source code and receive suggestions with fast‑ruby idioms. Code is analyzed using [fasterer-github](https://github.com/caspg/fasterer-github) gem.
+Analyze your open source code and receive suggestions with fast‑ruby idioms.
+
+A Code is analyzed with [fasterer-github](https://github.com/caspg/fasterer-github) gem.
 
 
 ## Technology stack
