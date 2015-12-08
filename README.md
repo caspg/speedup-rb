@@ -12,7 +12,7 @@ A Code is analyzed with [fasterer-github](https://github.com/caspg/fasterer-gith
 
 
 ## Technology stack
-- Lotus.rb
+- [Lotus - web framework for Ruby](http://lotusrb.org/)
 - Sidekiq
 - PostgreSQL
 - Capistrano
