@@ -2,6 +2,10 @@ module Web::Views::Reports
   class Show
     include Web::View
 
+    def report_path
+      ensure_backslash(report.path) unless report.path =~ /\.rb$/
+    end
+
     def empty_content?
       report.content.nil? || fasterer_offences.empty? && fasterer_parse_errors.empty? && fasterer_api_errors.empty?
     end
@@ -48,6 +52,11 @@ module Web::Views::Reports
 
     def fasterer_offences_details
       @fasterer_offences_details ||= Web::Views::FastererOffences.details
+    end
+
+    def ensure_backslash(report_path)
+      return report_path if report_path[-1] == '/'
+      "#{report_path}/"
     end
   end
 end

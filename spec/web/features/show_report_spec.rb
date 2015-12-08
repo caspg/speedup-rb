@@ -1,7 +1,7 @@
 require 'features_helper'
 
 describe 'Show report' do
-  before { ReportRepository.create(Report.new(owner: 'owner', repo:  'repo', form_uuid: 'uuid')) }
+  before { ReportRepository.create(Report.new(owner: 'owner', repo:  'repo', form_uuid: 'uuid', path: 'path')) }
   after { ReportRepository.clear }
 
   let(:report) { ReportRepository.last }
