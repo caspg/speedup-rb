@@ -15,7 +15,7 @@ module Web::Views
         rescue_vs_respond_to: {
           fast_ruby_repo: 'beginrescue-vs-respond_to-for-control-flow-code',
           pretty_title: 'begin...rescue vs respond_to? for Control Flow',
-          explanation: 'begin...rescue is slower then respond_to?'
+          explanation: 'begin...rescue is slower than respond_to?'
         },
         module_eval: {
           fast_ruby_repo: 'define_method-vs-module_eval-for-defining-methods-code',
