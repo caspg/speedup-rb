@@ -4,7 +4,7 @@ lock '3.4.0'
 set :application,     'speedup-rb'
 set :repo_url,        'git@github.com:caspg/speedup-rb.git'
 set :user,            'caspg'
-set :puma_threads,    [2, 10]
+set :puma_threads,    [2, 2]
 set :puma_workers,    1
 
 set :pty,             false
